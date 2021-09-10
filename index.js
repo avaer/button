@@ -11,7 +11,7 @@ export default () => {
   const keyGeometry = new THREE.PlaneBufferGeometry(keySize, keySize);
   const eKeyMaterial = (() => {
     const texture = new THREE.Texture();
-    texture.minFilter = THREE.THREE.LinearMipmapLinearFilter;
+    texture.minFilter = THREE.LinearMipmapLinearFilter;
     texture.magFilter = THREE.LinearFilter;
     texture.encoding = THREE.sRGBEncoding;
     texture.anisotropy = 16;
