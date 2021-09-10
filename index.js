@@ -3,6 +3,8 @@ import metaversefile from 'metaversefile';
 const {useApp, useFrame} = metaversefile;
 
 export default () => {
+  const app = useApp();
+  
   const keySize = 0.3;
   const keyRadius = 0.045;
   const keyInnerFactor = 0.8;
