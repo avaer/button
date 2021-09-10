@@ -62,11 +62,11 @@ const keyCircleMaterial = new THREE.ShaderMaterial({
       value: 0,
       needsUpdate: true,
     },
-    uTimeCubic: {
+    /*uTimeCubic: {
       type: 'f',
       value: 0,
       needsUpdate: true,
-    },
+    }, */
   },
   vertexShader: `\
     precision highp float;
@@ -146,6 +146,14 @@ export default () => {
   })();
   keyCircleMesh.position.z = 0.01;
   app.add(keyCircleMesh);
+  
+  useFrame(() => {
+    const f = (Date.now()%1000)/1000;
+    keyMesh.scale.setScalar(1 - f*0.3);
+    keyCircleMesh.scale.setScalar(1 - f*0.2);
+    keyCircleMesh.material.uniforms.uTime.value = f;
+    keyCircleMesh.material.uniforms.uTime.needsUpdate = true;
+  });
 
   return app;
 };
