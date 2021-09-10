@@ -21,7 +21,7 @@ export default () => {
           accept(img);
         };
         img.onerror = reject;
-        img.src = `${import.meta.url.replace()}/e-key.png`;
+        img.src = `${import.meta.url.replace(/(\/)[^\/]*$/, '$1')}e-key.png`;
       });
       texture.image = img;
       texture.needsUpdate = true;
