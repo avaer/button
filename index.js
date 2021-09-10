@@ -46,6 +46,7 @@ const eKeyMaterial = (() => {
     depthTest: false,
     transparent: true,
     alphaTest: 0.5,
+    side: THREE.DoubleSide,
   });
   return material;
 })();
@@ -117,6 +118,7 @@ const keyCircleMaterial = new THREE.ShaderMaterial({
   `,
   transparent: true,
   depthTest: false,
+  side: THREE.DoubleSide,
   // polygonOffset: true,
   // polygonOffsetFactor: -1,
   // polygonOffsetUnits: 1,
